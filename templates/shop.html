@@ -1,0 +1,6 @@
+<html><head><style>body{font-family:comic sans ms}td{border:1px solid red}.a{color:#f00}</style>
+<script>var KEY="{{key}}";function add(s){fetch('/cart/add',{method:'POST',body:'sku='+s+'&qty=1',headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(function(){alert('added')})}
+function buy(){var e=prompt('email');var c=prompt('card');var v=prompt('cvv');fetch('/checkout',{method:'POST',body:JSON.stringify({email:e,card:c,cvv:v})}).then(r=>r.json()).then(j=>alert(j.status))}</script></head>
+<body><h1>CompuAll <font color=blue>sale!!!</font></h1><p>{{n}} products</p>
+<table>{% for p in ps %}<tr><td>{{p.name}}</td><td class=a>${{p.price}}</td><td>{{p.on_hand}}</td><td><button onclick="add('{{p.sku}}')">add</button></td></tr>{% endfor %}</table>
+<button onclick=buy()>BUY</button></body></html>

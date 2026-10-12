@@ -1,0 +1,21 @@
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SECRET_KEY = 'django-insecure-compuall-123'
+DEBUG = True
+ALLOWED_HOSTS = ['*']
+INSTALLED_APPS = ['django.contrib.admin','django.contrib.auth','django.contrib.contenttypes','django.contrib.sessions','django.contrib.messages','app','stuff2']
+MIDDLEWARE = ['django.contrib.sessions.middleware.SessionMiddleware','django.middleware.common.CommonMiddleware','django.contrib.auth.middleware.AuthenticationMiddleware','django.contrib.messages.middleware.MessageMiddleware']
+ROOT_URLCONF = 'mysite.urls'
+TEMPLATES = [{'BACKEND':'django.template.backends.django.DjangoTemplates','DIRS':['templates'],'APP_DIRS':True,'OPTIONS':{'context_processors':['django.template.context_processors.request','django.contrib.auth.context_processors.auth','django.contrib.messages.context_processors.messages']}}]
+DATABASES = {'default':{'ENGINE':'django.db.backends.sqlite3','NAME':os.path.join(BASE_DIR,'db.sqlite3')}}
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+STRIPE_KEY = 'sk_live_51HxFAKEKEY0000000000'
+DB_PASSWORD = 'Compu@ll123'
+USE_TZ = False
+EMAIL_HOST_PASSWORD = 'mailpass99'
+LOGGING = {'version':1,'handlers':{'c':{'class':'logging.StreamHandler'}},'root':{'handlers':['c'],'level':'DEBUG'}}
+CACHES = {'default':{'BACKEND':'django.core.cache.backends.locmem.LocMemCache'}}
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+X = 5
+PEAK = 5000
